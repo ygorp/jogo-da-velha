@@ -111,9 +111,22 @@ function mudarCor(quadrado1, quadrado2, quadrado3) {
 function checaSequencia(quadrado1, quadrado2, quadrado3) {
   var igual = false;
 
-  if(quadrado1.innerHTML !== '-' && quadrado1.innerHTML === quadrado2.innerHTML && quadrado2.innerHTML === quadrado3){
+  if(quadrado1.innerHTML !== '-' && quadrado1.innerHTML === quadrado2.innerHTML && quadrado2.innerHTML === quadrado3.innerHTML){
     igual = true;
   }
 
   return igual;
+}
+
+function reiniciar() {
+  vencedor = null;
+  vencedorSelecionado.innerHTML = '';
+
+  for (var i = 1; i <= 9; i++){
+    var quadrado = document.getElementById(i);
+    quadrado.style.background = '#eee';
+    quadrado.style.color = "#eee";
+    quadrado.innerHTML = '-';
+  }
+  mudarJogador('X');
 }
